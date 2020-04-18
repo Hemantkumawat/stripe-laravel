@@ -26,10 +26,7 @@ class CustomerStoreRequest extends FormRequest
         return [
             'name' => 'required|string',
             'email' => 'required|email|unique:users,email',
-            'phone' => 'required',
-            'description' => 'required',
             'password'=>'required|min:6',
-            'shipping' => 'required',
         ];
     }
 }

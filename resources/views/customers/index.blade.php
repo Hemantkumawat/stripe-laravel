@@ -78,12 +78,16 @@
                             <th>{{ $customer->id }}</th>
                             <td>{{ $customer->email }}</td>
                             <td>{{ $customer->description }}</td>
-                            <td>{{ $customer->address }}</td>
+                            <td>
+                                <pre class="text-white" style="text-align: left; max-width:300px">
+                                    {{ $customer->address }}
+                                </pre>
+                            </td>
                             <td>{{ $customer->balance }}</td>
                             <td>{{ $customer->created }}</td>
                             <td>{{ $customer->currency }}</td>
                             <td>
-                                <form action="{{ route('customers.destroy',$customer->id) }}" method="post">
+                                <form action="{{ route('customers.destroy',$customer->id) }}" method="post" style="display:flex;">
                                     @csrf
                                     @method('DELETE')
                                     <a href="{{ route('customers.show',$customer->id) }}"
